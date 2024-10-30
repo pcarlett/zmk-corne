@@ -14,12 +14,12 @@
 
         ESC_Combo {
             bindings = <&kp ESC>;
-            key-positions = <0 1>;
+            key-positions = <1 2>;
         };
 
         Tab_Combo {
             bindings = <&kp TAB>;
-            key-positions = <12 13>;
+            key-positions = <13 14>;
         };
     };
 
@@ -35,10 +35,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q         &kp W        &kp F           &kp P       &kp B        &kp J    &kp L       &kp U       &kp Y        &kp SEMI      &none
-&none  &mt LSHIFT A  &mt LCTRL R  &mt LALT S      &mt LGUI T  &kp G        &kp M    &mt RGUI N  &mt RALT E  &mt RCTRL I  &mt RSHIFT O  &none
-&none  &kp X         &kp C        &kp D           &kp V       &kp Z        &kp K    &kp H       &kp COMMA   &kp DOT      &kp FSLH      &none
-                                  &mt LGUI SPACE  &mo 1       &kp SPACE    &kp RET  &mo 2       &kp RALT
+&none  &kp Q         &kp W        &kp F           &kp P       &kp B        &kp J      &kp L       &kp U       &kp Y        &kp SEMI      &none
+&none  &mt LSHIFT A  &mt LCTRL R  &mt LALT S      &mt LGUI T  &kp G        &kp M      &mt RGUI N  &mt RALT E  &mt RCTRL I  &mt RSHIFT O  &none
+&none  &kp X         &kp C        &kp D           &kp V       &kp Z        &kp K      &kp H       &kp COMMA   &kp DOT      &kp FSLH      &none
+                                  &mt LGUI SPACE  &mo 1       &kp SPACE    &kp ENTER  &mo 2       &kp RALT
             >;
         };
 
