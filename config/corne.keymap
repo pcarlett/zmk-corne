@@ -16,12 +16,12 @@
 
         ESC_Combo {
             bindings = <&kp ESC>;
-            key-positions = <1 2>;
+            key-positions = <1 10>;
         };
 
         Tab_Combo {
             bindings = <&kp TAB>;
-            key-positions = <13 14>;
+            key-positions = <13 22>;
         };
 
         Backspace {
@@ -36,7 +36,7 @@
 
         Repeat_Key {
             bindings = <&key_repeat>;
-            key-positions = <19 16 15 20>;
+            key-positions = <19 16>;
         };
     };
 
