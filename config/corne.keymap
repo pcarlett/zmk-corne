@@ -38,6 +38,11 @@
             bindings = <&key_repeat>;
             key-positions = <19 16>;
         };
+
+        keyboard_control_layer {
+            bindings = <&mo 5>;
+            key-positions = <40 37>;
+        };
     };
 
     keymap {
