@@ -16,22 +16,22 @@
 
         ESC_Combo {
             bindings = <&kp ESC>;
-            key-positions = <1 10>;
+            key-positions = <2 3>;
         };
 
         Tab_Combo {
             bindings = <&kp TAB>;
-            key-positions = <13 22>;
+            key-positions = <26 27>;
         };
 
         Backspace {
             bindings = <&kp BACKSPACE>;
-            key-positions = <9 10>;
+            key-positions = <9 8>;
         };
 
         Delete {
             bindings = <&kp DEL>;
-            key-positions = <21 22>;
+            key-positions = <21 20>;
         };
 
         Repeat_Key {
@@ -44,14 +44,9 @@
             key-positions = <40 37>;
         };
 
-        ESC2 {
-            bindings = <&kp ESC>;
-            key-positions = <1 2>;
-        };
-
-        TAB2 {
-            bindings = <&kp TAB>;
-            key-positions = <13 14>;
+        ENTER_Combo {
+            bindings = <&kp ENTER>;
+            key-positions = <32 33>;
         };
     };
 
