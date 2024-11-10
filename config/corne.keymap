@@ -26,12 +26,12 @@
 
         Backspace {
             bindings = <&kp BACKSPACE>;
-            key-positions = <9 8>;
+            key-positions = <9 10>;
         };
 
         Delete {
             bindings = <&kp DEL>;
-            key-positions = <21 20>;
+            key-positions = <8 9>;
         };
 
         Repeat_Key {
