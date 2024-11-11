@@ -11,6 +11,9 @@
 &mt { tapping-term-ms = <400>; };
 
 / {
+    //////////////////////////////////////
+    // Homerow Mods: Cross-hand Example //
+    //////////////////////////////////////
     //    behaviors {
     //        lh_pht: left_positional_hold_tap {
     //            compatible = "zmk,behavior-hold-tap";
@@ -33,7 +36,53 @@
     //        };
     //    };
 
-    combos {
+    /////////////////////////////////////////
+    // Homerow Mods: Tap-Preferred Example //
+    /////////////////////////////////////////
+    // behaviors {
+    //     hm: homerow_mods {
+    //         compatible = "zmk,behavior-hold-tap";
+    //         #binding-cells = <2>;
+    //         tapping-term-ms = <150>;
+    //         quick-tap-ms = <0>;
+    //         flavor = "tap-preferred";
+    //         bindings = <&kp>, <&kp>;
+    //     };
+    // };
+
+    // keymap {
+    //     compatible = "zmk,keymap";
+    //     default_layer {
+    //         bindings = <
+    //             &hm LCTRL A &hm LGUI S &hm LALT D &hm LSHIFT F
+    //         >;
+    //     };
+    // };
+
+    ////////////////////////////////////
+    // Homerow Mods: Balanced Example //
+    ////////////////////////////////////
+    // behaviors {
+    //     bhm: balanced_homerow_mods {
+    //         compatible = "zmk,behavior-hold-tap";
+    //         #binding-cells = <2>;
+    //         tapping-term-ms = <200>;    // <---[[moderate duration]]
+    //         quick-tap-ms = <0>;
+    //         flavor = "balanced";
+    //         bindings = <&kp>, <&kp>;
+    //     };
+    // };
+
+    // keymap {
+    //     compatible = "zmk,keymap";
+    //     default_layer {
+    //         bindings = <
+    //             &bhm LCTRL A &bhm LGUI S &bhm LALT D &bhm LSHIFT F
+    //         >;
+    //     };
+    // };
+
+combos {
         compatible = "zmk,combos";
 
         ESC_Combo {
