@@ -40,18 +40,13 @@
         };
 
         keyboard_control_layer {
-            bindings = <&mo 0>;
+            bindings = <&mo 3>;
             key-positions = <40 37>;
         };
 
         ENTER_Combo {
             bindings = <&kp ENTER>;
             key-positions = <32 33>;
-        };
-
-        Tester_Layer {
-            bindings = <&mo 2>;
-            key-positions = <36 41>;
         };
     };
 
@@ -70,7 +65,7 @@
 &none  &kp Q         &kp W        &kp F       &kp P       &kp B        &kp J      &kp L       &kp U       &kp Y        &kp SEMI      &none
 &none  &mt LSHIFT A  &mt LCTRL R  &mt LALT S  &mt LGUI T  &kp G        &kp M      &mt RGUI N  &mt RALT E  &mt RCTRL I  &mt RSHIFT O  &none
 &none  &kp X         &kp C        &kp D       &kp V       &kp Z        &kp K      &kp H       &kp COMMA   &kp DOT      &kp FSLH      &none
-                                  &kp TAB     &mo 1       &kp SPACE    &kp ENTER  &mo 3       &kp BSPC
+                                  &kp TAB     &mo 1       &kp SPACE    &kp ENTER  &mo 2       &kp BSPC
             >;
         };
 
