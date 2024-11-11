@@ -48,6 +48,11 @@
             bindings = <&kp ENTER>;
             key-positions = <32 33>;
         };
+
+        Tester_Layer {
+            bindings = <&mo 4>;
+            key-positions = <36 41>;
+        };
     };
 
     keymap {
