@@ -173,5 +173,28 @@
                                     &trans        &trans        &trans          &trans  &trans      &trans
             >;
         };
+
+   // default_layer {
+            //              COLEMAK-DH Keyboard L
+ayout
+            // ----------------------------------
+-------------------------------------------------
+------
+            // |      |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  :  |      |
+            // |      |  A  |  R  |  S  |  T  |
+G  |   |  M  |  N   |  E  |  I  |  O  |      |               // |      |  X  |  C  |  D  |  V  |
+Z  |   |  K  |  H   |  ,  |  .  |  /  |      |               //                    | BSPC| LWR |  L1 |   |  L2 | RSE  | ALT |
+
+           // bindings = <
+           //    &none  &kp Q          &kp W         &kp F        &kp P        &kp B        &kp J
+   &kp L        &kp U        &kp Y         &kp SE
+MI       &none
+            //   &none  &bhm LSHIFT A  &bhm LCTRL R
+  &bhm LALT S  &bhm LGUI T  &kp G        &kp M
+   &bhm RGUI N  &bhm RALT E  &bhm RCTRL I  &bhm R
+SHIFT O  &none
+            //   &none  &kp X          &kp C
+  &kp D        &kp V        &kp Z        &kp K      &kp H        &kp COMMA    &kp DOT       &kp FSLH       &none                                               //                        &kp TAB
+&mo 1        &kp SPACE    &kp ENTER  &mo 2        &kp BSPC                                                    >;                                           };
     };
 };
