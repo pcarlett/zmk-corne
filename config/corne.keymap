@@ -111,11 +111,6 @@
             key-positions = <19 16>;
         };
 
-        keyboard_control_layer {
-            bindings = <&mo 3>;
-            key-positions = <37 40>;
-        };
-
         ENTER_Combo {
             bindings = <&kp ENTER>;
             key-positions = <32 33>;
@@ -191,6 +186,15 @@
 &trans  &trans        &trans        &trans        &trans        &trans          &trans  &trans      &trans             &trans           &trans       &trans
                                     &trans        &trans        &trans          &trans  &trans      &trans
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        keyboard_controls_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
