@@ -120,6 +120,16 @@
             bindings = <&kp SPACE>;
             key-positions = <14 21>;
         };
+
+        SPACE_Combo_2 {
+            bindings = <&kp SPACE>;
+            key-positions = <28 27>;
+        };
+
+        SPACE_Combo_3 {
+            bindings = <&kp SPACE>;
+            key-positions = <31 32>;
+        };
     };
 
     keymap {
