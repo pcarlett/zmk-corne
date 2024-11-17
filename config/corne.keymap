@@ -135,18 +135,23 @@
             bindings = <&mo 3>;
             key-positions = <38 39>;
         };
+
+        Colemak_DH_Layout {
+            bindings = <&mo 4>;
+            key-positions = <37 40>;
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-       qwerty_layer {
-           //            QWERTY  Keyboard Layout
-           // -----------------------------------------------------------------------------------------
-           // |      |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |      |
-           // |      |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |      |             
-           // |      |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |      |               
-           //                    |     |  L1 |  L1 |   |  L2 |  L2  |     |
+        qwerty_layer {
+            //            QWERTY  Keyboard Layout
+            // -----------------------------------------------------------------------------------------
+            // |      |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |      |
+            // |      |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |      |             
+            // |      |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |      |               
+            //                    |     |  L1 |  L1 |   |  L2 |  L2  |     |
 
             bindings = <
 &none  &kp Q          &kp W         &kp E        &kp R        &kp T    &kp Y  &kp U        &kp I        &kp O         &kp P             &none
@@ -196,14 +201,14 @@
             // |      |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |      |
             // |      |  X  |  C  |  D  |  V  |  Z  |   |  K  |  H   |  ,  |  .  |  /  |      |
             //                    | BSPC| LWR |  L1 |   |  L2 | RSE  | ALT |
+
             bindings = <
-                &none  &kp Q          &kp W         &kp F        &kp P        &kp B    &kp J  &kp L        &kp U        &kp Y         &kp SEMI       &none
-                &none  &bhm LSHIFT A  &bhm LCTRL R  &bhm LALT S  &bhm LGUI T  &kp G    &kp M  &bhm RGUI N  &bhm RALT E  &bhm RCTRL I  &bhm RSHIFT O  &none
-                &none  &kp X          &kp C         &kp D        &kp V        &kp Z    &kp K  &kp H        &kp COMMA    &kp DOT       &kp FSLH       &none
+&none  &kp Q          &kp W         &kp F        &kp P        &kp B    &kp J  &kp L        &kp U        &kp Y         &kp SEMI       &none
+&none  &bhm LSHIFT A  &bhm LCTRL R  &bhm LALT S  &bhm LGUI T  &kp G    &kp M  &bhm RGUI N  &bhm RALT E  &bhm RCTRL I  &bhm RSHIFT O  &none
+&none  &kp X          &kp C         &kp D        &kp V        &kp Z    &kp K  &kp H        &kp COMMA    &kp DOT       &kp FSLH       &none
                                     &none        &mo 1        &mo 1    &mo 2  &mo 2        &none
             >;
         };
-
     };
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
