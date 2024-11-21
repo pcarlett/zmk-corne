@@ -97,6 +97,21 @@
     //     };
     // };
 
+    /////////////////////////////////////
+    // Homerow Mods: Custom PC Example //
+    /////////////////////////////////////
+
+    behaviors {
+        pcm: balanced_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;    // <---[[extreme duration]]
+            quick-tap-ms = <0>;
+            flavor = "extreme";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -150,7 +165,7 @@
             key-positions = <38 39>;
         };
 
-        Colemak_DH_Layout {
+        Qwerty_Layout {
             bindings = <&mo 4>;
             key-positions = <37 40>;
         };
@@ -166,10 +181,11 @@
             // |      |  A  |  R  |  S  |  T  |  G  |   |  M  |  N   |  E  |  I  |  O  |      |
             // |      |  X  |  C  |  D  |  V  |  Z  |   |  K  |  H   |  ,  |  .  |  /  |      |
             //                    | BSPC| LWR |  L1 |   |  L2 | RSE  | ALT |
+// &none  &lh_pht LSHIFT A  &lh_pht LCTRL R  &lh_pht LALT S  &lh_pht LGUI T  &kp G    &kp M  &rh_pht RGUI N  &rh_pht RALT E  &rh_pht RCTRL I  &rh_pht RSHIFT O  &none
 
             bindings = <
 &none  &kp Q          &kp W         &kp F        &kp P        &kp B    &kp J  &kp L        &kp U        &kp Y         &kp SEMI       &none
-&none  &lh_pht LSHIFT A  &lh_pht LCTRL R  &lh_pht LALT S  &lh_pht LGUI T  &kp G    &kp M  &rh_pht RGUI N  &rh_pht RALT E  &rh_pht RCTRL I  &rh_pht RSHIFT O  &none
+&none  &pcm LSHIFT A  &pcm LCTRL R  &pcm LALT S  &pcm LGUI T  &kp G    &kp M  &pcm RGUI N  &pcm RALT E  &pcm RCTRL I  &pcm RSHIFT O  &none
 &none  &kp X          &kp C         &kp D        &kp V        &kp Z    &kp K  &kp H        &kp COMMA    &kp DOT       &kp FSLH       &none
                                     &none        &none        &mo 1    &mo 2  &none        &none
             >;
@@ -220,7 +236,7 @@
 &none  &kp Q          &kp W         &kp E        &kp R        &kp T    &kp Y  &kp U        &kp I        &kp O         &kp P             &none
 &none  &bhm LSHIFT A  &bhm LCTRL S  &bhm LALT D  &bhm LGUI F  &kp G    &kp H  &bhm RGUI J  &bhm RALT K  &bhm RCTRL L  &bhm RSHIFT SEMI  &none
 &none  &kp Z          &kp X         &kp C        &kp V        &kp B    &kp N  &kp M        &kp COMMA    &kp DOT       &kp FSLH          &none
-                                    &none        &mo 1        &mo 1    &mo 1  &mo 2        &none
+                                    &trans       &trans       &mo 1    &mo 2  &trans       &trans
             >;
         };
     };
