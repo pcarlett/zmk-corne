@@ -80,7 +80,8 @@
         bhm: balanced_homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;    // <---[[moderate duration]]
+            // tapping-term-ms = <200>;    // <---[[moderate duration]]
+            tapping-term-ms = <400>;    // <---[[extreme duration]]
             quick-tap-ms = <0>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
@@ -96,21 +97,6 @@
     //         >;
     //     };
     // };
-
-    /////////////////////////////////////
-    // Homerow Mods: Custom PC Example //
-    /////////////////////////////////////
-
-    behaviors {
-        pcm: balanced_homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <400>;    // <---[[extreme duration]]
-            quick-tap-ms = <0>;
-            flavor = "extreme";
-            bindings = <&kp>, <&kp>;
-        };
-    };
 
     combos {
         compatible = "zmk,combos";
@@ -185,7 +171,7 @@
 
             bindings = <
 &none  &kp Q          &kp W         &kp F        &kp P        &kp B    &kp J  &kp L        &kp U        &kp Y         &kp SEMI       &none
-&none  &pcm LSHIFT A  &pcm LCTRL R  &pcm LALT S  &pcm LGUI T  &kp G    &kp M  &pcm RGUI N  &pcm RALT E  &pcm RCTRL I  &pcm RSHIFT O  &none
+&none  &bhm LSHIFT A  &bhm LCTRL R  &bhm LALT S  &bhm LGUI T  &kp G    &kp M  &bhm RGUI N  &bhm RALT E  &bhm RCTRL I  &bhm RSHIFT O  &none
 &none  &kp X          &kp C         &kp D        &kp V        &kp Z    &kp K  &kp H        &kp COMMA    &kp DOT       &kp FSLH       &none
                                     &none        &none        &mo 1    &mo 2  &none        &none
             >;
