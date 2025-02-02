@@ -189,10 +189,10 @@
             // &none  &lh_pht LSHIFT A  &lh_pht LCTRL R  &lh_pht LALT S  &lh_pht LGUI T  &kp G    &kp M  &rh_pht RGUI N  &rh_pht RALT E  &rh_pht RCTRL I  &rh_pht RSHIFT O  &none
 
             bindings = <
-&none  &kp Q          &kp W         &kp F        &kp P        &kp B    &kp J  &kp L        &kp U        &kp Y         &kp SEMI       &none
-&none  &bhm LSHIFT A  &bhm LCTRL R  &bhm LALT S  &bhm LGUI T  &kp G    &kp M  &bhm RGUI N  &bhm RALT E  &bhm RCTRL I  &bhm RSHIFT O  &none
-&none  &kp X          &kp C         &kp D        &kp V        &kp Z    &kp K  &kp H        &kp COMMA    &kp DOT       &kp FSLH       &none
-                                    &none        &mo 2        &mo 1    &mo 2  &mo 1        &none
+&none  &kp Q          &kp W         &kp F        &kp P        &kp B          &kp J        &kp L         &kp U          &kp Y         &kp SEMI       &none
+&none  &bhm LSHIFT A  &bhm LCTRL R  &bhm LALT S  &bhm LGUI T  &kp G          &kp M        &bhm RGUI N   &bhm RALT E    &bhm RCTRL I  &bhm RSHIFT O  &none
+&none  &kp X          &kp C         &kp D        &kp V        &kp Z          &kp K        &kp H         &kp COMMA      &kp DOT       &kp FSLH       &none
+                                    &kp ESCAPE   &lt 2 TAB    &lt 1 SPACE    &lt 2 ENTER  &lt 1 DELETE  &kp BACKSPACE
             >;
         };
 
