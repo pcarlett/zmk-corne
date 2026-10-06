@@ -1,12 +1,31 @@
-name: Build ZMK Firmware
+name: Build ZMK Firmwares
 
-on:
-  workflow_dispatch:
-  push:
-    paths:
-      - 'config/**'
-      - '.github/workflows/build.yml'
+on: [push, pull_request, workflow_dispatch]
 
 jobs:
+  matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: set-matrix
+        run: |
+          matrix=$(yq -oj -I0 '.' config/build.yaml)
+          echo "matrix=$matrix" >> $GITHUB_OUTPUT
+
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    needs: matrix
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.matrix.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build ZMK
+        uses: zmkfirmware/zmk/.github/actions/build-user-config@main
+        with:
+          board: ${{ matrix.board }}
+          shield: ${{ matrix.shield }}
+          cmake-args: ${{ matrix.cmake-args }}
+          snippet: ${{ matrix.snippet }}
