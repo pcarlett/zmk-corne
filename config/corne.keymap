@@ -175,7 +175,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        colemak_dh_layer {
+        colemak_layer {
             //              COLEMAK-DH Keyboard Layout
             // -----------------------------------------------------------------------------------------
             // |      |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  :  |      |
