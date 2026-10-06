@@ -4,20 +4,4 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - board: nice_nano/nrf52840
-            shield: corne_left nice_view_adapter nice_view
-          - board: nice_nano/nrf52840
-            shield: corne_right nice_view_adapter nice_view
-
-    steps:
-      - uses: actions/checkout@v4
-      - name: Build ZMK
-        uses: zmkfirmware/zmk/.github/actions/build-user-config@main
-        with:
-          board: ${{ matrix.board }}
-          shield: ${{ matrix.shield }}
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
