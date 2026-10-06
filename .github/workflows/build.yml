@@ -3,30 +3,17 @@ name: Build ZMK Firmwares
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
-  matrix:
-    runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.set-matrix.outputs.matrix }}
-    steps:
-      - uses: actions/checkout@v4
-      - id: set-matrix
-        run: |
-          # Verifica dove si trova build.yaml e genera il JSON
-          if [ -f "config/build.yaml" ]; then
-            matrix=$(yq -oj -I0 '.' config/build.yaml)
-          elif [ -f "build.yaml" ]; then
-            matrix=$(yq -oj -I0 '.' build.yaml)
-          else
-            echo "Errore: file build.yaml non trovato!" && exit 1
-          fi
-          echo "matrix=$matrix" >> $GITHUB_OUTPUT
-
   build:
-    needs: matrix
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-      matrix: ${{ fromJson(needs.matrix.matrix) }}
+      matrix:
+        include:
+          - board: nice_nano/nrf52840
+            shield: corne_left nice_view_adapter nice_view
+          - board: nice_nano/nrf52840
+            shield: corne_right nice_view_adapter nice_view
+
     steps:
       - uses: actions/checkout@v4
       - name: Build ZMK
@@ -34,5 +21,3 @@ jobs:
         with:
           board: ${{ matrix.board }}
           shield: ${{ matrix.shield }}
-          cmake-args: ${{ matrix.cmake-args }}
-          snippet: ${{ matrix.snippet }}
