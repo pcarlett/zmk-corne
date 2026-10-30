@@ -1,0 +1,188 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    //////////////////////////////////////
+    // Homerow Mods: Cross-hand Example //
+    //////////////////////////////////////
+
+    behaviors {
+        rh_pht: right_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <100>;                    // <---[[produces tap if held longer than tapping-term-ms]]
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <0 1 2 3 4 5 6>;    // <---[[left-hand keys]]
+        };
+    };
+
+    behaviors {
+        lh_pht: left_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <100>;                    // <---[[produces tap if held longer than tapping-term-ms]]
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <5 6 7 8 9 10>;    // <---[[right-hand keys]]
+        };
+    };
+
+    /////////////////////////////////////////
+    // Homerow Mods: Tap-Preferred Example //
+    /////////////////////////////////////////
+
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+    //////////////////////////////////
+    // Homerow Mods: Balanced Example //
+    //////////////////////////////////
+
+    behaviors {
+        bhm: balanced_homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <500>;    // <---[[extreme duration]]
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        ESC_Combo {
+            bindings = <&kp ESC>;
+            key-positions = <2 3>;
+        };
+
+        Tab_Combo {
+            bindings = <&kp TAB>;
+            key-positions = <26 27>;
+        };
+
+        Backspace_Combo {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <9 10>;
+        };
+
+        Delete_Combo {
+            bindings = <&kp DEL>;
+            key-positions = <8 9>;
+        };
+
+        Repeat_Key {
+            bindings = <&key_repeat>;
+            key-positions = <19 16>;
+        };
+
+        ENTER_Combo {
+            bindings = <&kp ENTER>;
+            key-positions = <32 33>;
+        };
+
+        SPACE_Combo {
+            bindings = <&kp SPACE>;
+            key-positions = <14 21>;
+        };
+
+        SPACE_Combo_2 {
+            bindings = <&kp SPACE>;
+            key-positions = <28 27>;
+        };
+
+        SPACE_Combo_3 {
+            bindings = <&kp SPACE>;
+            key-positions = <31 32>;
+        };
+
+        Keyboard_Controls {
+            bindings = <&mo 3>;
+            key-positions = <38 39>;
+        };
+
+        ENTER_Combo_2 {
+            bindings = <&kp ENTER>;
+            key-positions = <20 21>;
+        };
+
+        TAB_Combo_2 {
+            bindings = <&kp TAB>;
+            key-positions = <14 15>;
+        };
+
+        CAPS_Lock_Combo {
+            bindings = <&kp CAPS>;
+            key-positions = <36 41>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        default_layer {
+            // -----------------------------------------------------------------------------------------
+            // |      |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |      |
+            // |      |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |      |
+            // |      |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |      |
+            //                    | ESC | TAB | SPC |   | ENT | DEL  |BSPC |
+
+            bindings = <
+&none  &kp Q         &kp W         &kp E         &kp R         &kp T         &kp Y         &kp U         &kp I         &kp O         &kp P         &none
+&none  &bhm LSHIFT A &bhm LCTRL S  &bhm LALT D   &bhm LGUI F   &kp G         &kp H         &bhm RGUI J   &bhm RALT K   &bhm RCTRL L  &bhm RSHIFT SEMI &none
+&none  &kp Z         &kp X         &kp C         &kp V         &kp B         &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH      &none
+                                   &kp ESCAPE    &lt 2 TAB     &lt 1 SPACE   &lt 2 ENTER   &lt 1 DELETE  &kp BACKSPACE
+            >;
+        };
+
+        numbers_and_functions {
+            bindings = <
+&none  &kp F12  &kp F7  &kp F8  &kp F9  &trans     &kp PLUS   &kp N7  &kp N8  &kp N9  &kp ASTRK  &trans
+&none  &kp F11  &kp F4  &kp F5  &kp F6  &trans     &kp MINUS  &kp N4  &kp N5  &kp N6  &kp FSLH   &trans
+&none  &kp F10  &kp F1  &kp F2  &kp F3  &trans     &kp N0     &kp N1  &kp N2  &kp N3  &kp EQUAL  &trans
+                        &trans  &trans  &trans     &trans     &trans  &trans
+            >;
+        };
+
+        symbols_and_arrows {
+            bindings = <
+&none  &kp EXCLAMATION  &kp AT_SIGN    &kp HASH       &kp DOLLAR             &kp PERCENT         &kp PAGE_UP        &kp HOME           &kp UP_ARROW    &kp END            &kp COLON       &none
+&none  &kp CARET        &kp AMPERSAND  &kp PIPE       &kp LEFT_PARENTHESIS   &kp LEFT_BRACKET    &kp PAGE_DOWN      &kp LEFT_ARROW     &kp DOWN_ARROW  &kp RIGHT_ARROW    &kp UNDERSCORE  &none
+&none  &kp TILDE        &kp GRAVE      &kp BACKSLASH  &kp RIGHT_PARENTHESIS  &kp RBKT            &kp SINGLE_QUOTE   &kp DOUBLE_QUOTES  &kp LESS_THAN   &kp GREATER_THAN   &kp QUESTION    &none
+                                       &trans         &trans                 &trans              &trans             &trans             &trans
+            >;
+        };
+
+        keyboard_controls {
+            bindings = <
+&trans  &bt BT_SEL 0  &bt BT_SEL 1    &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &kp C_MUTE  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_POWER  &trans
+&trans  &bt BT_CLR    &bt BT_CLR_ALL  &trans        &trans        &trans          &trans  &trans      &trans             &trans           &trans       &trans
+&trans  &trans        &trans          &trans        &trans        &trans          &trans  &trans      &trans             &trans           &trans       &trans
+                                      &trans        &trans        &trans          &trans  &trans      &trans
+            >;
+        };
+    };
+
+    conditional_layers { compatible = "zmk,conditional-layers"; };
+};
